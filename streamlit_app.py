@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-pip install openpyxl
+import openpyxl
 
 # Set the page configuration
 st.set_page_config(page_title="ICD-O Code Browser", layout="wide")
