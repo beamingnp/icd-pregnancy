@@ -1,14 +1,12 @@
 import streamlit as st
 import pandas as pd
-
-# Set the page configuration
-st.set_page_config(page_title="ICD-O Code Browser", layout="wide")
+import openpyxl
 
 # Load the Excel file
 @st.cache_data
 def load_data():
     try:
-        df = pd.read_excel('C:/Users/user/Downloads/chatbot/icd/pregnancy ICD10-1.xlsx')
+        df = pd.read_excel('/workspaces/icd-pregnancy/pregnancy ICD10-1.xlsx')
         return df
     except FileNotFoundError:
         st.error("Error: Excel file not found.")
@@ -33,7 +31,7 @@ def main():
         st.write("### Download the alphabetic list")
         st.download_button(
             label="Download PDF",
-            data=open('C:/Users/user/Downloads/book-3-icd-94-2blak-581-586.pdf', 'rb').read(),
+            data=open('/workspaces/icd-pregnancy/book-3-pregnancy.pdf', 'rb').read(),
             file_name="book-3-pregnancy.pdf",
             mime="application/pdf"
         )
