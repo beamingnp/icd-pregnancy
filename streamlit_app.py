@@ -9,7 +9,7 @@ st.set_page_config(page_title="ICD-O Code Browser", layout="wide")
 @st.cache_data
 def load_data():
     try:
-        df = pd.read_excel('/icd-pregnancy/data/pregnancy ICD10-1.xlsx')
+        df = pd.read_excel('/icd-pregnancy/data/pregnancy1.xlsx')
         return df
     except FileNotFoundError:
         st.error("Error: Excel file not found.")
